@@ -10,8 +10,8 @@ DATA_DIR = "C:/Users/Benoit Germonpre/Google Drive/4C Documents/PycharmProjects/
 
 import pandas as pd
 
-url="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"
-c=pd.read_csv(url)
+url = "https://github.com/BenoitGermonpre/MNIST_test/blob/master/data/test.csv"
+data = pd.read_csv(url)
 
 def read_image(index, file='test.csv'):
     """Read an example image from a test file
