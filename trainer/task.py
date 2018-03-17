@@ -1,7 +1,7 @@
 import tensorflow as tf
-from util import build_input_fn
-from model import build_model_fn
-from config import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE
+from trainer.util import build_input_fn
+from trainer.model import build_model_fn
+from trainer.config import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE
 import os, glob
 
 

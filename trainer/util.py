@@ -21,14 +21,14 @@ def build_input_fn(filenames, batch_size=100, shuffle=False):
     def _input_fn():
 
         # Create TF Dataset object for reading and shuffling data from TFRecords files
-        dataset = (tf.data.TFRecordDataset(filenames).map(_parser))
+        dataset = tf.data.TFRecordDataset(filenames).map(_parser)
 
         # Shuffle data (optionally)
         if shuffle:
             dataset = dataset.shuffle(buffer_size=10000)
 
         # Infinite iterations: let training spec determine num_epochs
-        dataset = dataset.repeat(None)
+        #dataset = dataset.repeat(None)
 
         # Determine batch size and iterate
         dataset = dataset.batch(batch_size)
