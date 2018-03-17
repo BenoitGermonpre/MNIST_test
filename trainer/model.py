@@ -8,8 +8,8 @@ def inference(features, mode):
         Returns:
             A tensor that represents the predictions
     """
-    #print(type(features['image']))
-    #print(features['image'].get_shape())
+    print(type(features['image']))
+    print(features['image'].get_shape())
 
     x = features['image']
     input_layer = tf.reshape(x, [-1, 28, 28, 1], name="Reshape_input")
