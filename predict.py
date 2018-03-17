@@ -5,6 +5,7 @@ import pandas as pd
 from trainer.config import PROJECT_ID, DATA_DIR, WIDTH, HEIGHT
 import matplotlib.pyplot as plt
 
+DATA_DIR = "C:/Users/Benoit Germonpre/Desktop"
 
 def read_image(index, file='test.csv'):
     """Read an example image from a test file
@@ -54,15 +55,18 @@ if __name__ == "__main__":
 
     # Read a test image and plot it
     image_pixels = read_image(index=1)
-    plt.imshow(image_pixels.reshape(WIDTH, HEIGHT), cmap='gray')
+    plt.imshow(np.array(image_pixels).reshape(WIDTH, HEIGHT), cmap='gray')
+
+    images = [np.float(i) for i in image_pixels.tolist()]
+
 
     # Get predictions
     predictions = get_predictions(
         project=PROJECT_ID,
-        model="flowers",
+        model="mnist_model",
         instances=[
             {
-                'image': image_pixels,
+                'image': images,
             }]
     )
     print(predictions)
