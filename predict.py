@@ -2,10 +2,16 @@ from googleapiclient import discovery
 import os
 import numpy as np
 import pandas as pd
-from trainer.config import PROJECT_ID, DATA_DIR, WIDTH, HEIGHT
+from trainer.config import PROJECT_ID, WIDTH, HEIGHT
 import matplotlib.pyplot as plt
 
-DATA_DIR = "C:/Users/Benoit Germonpre/Desktop"
+## Set local path to folder that contains test data
+DATA_DIR = "C:/Users/Benoit Germonpre/Google Drive/4C Documents/PycharmProjects/MNIST_test/data/"
+
+import pandas as pd
+
+url="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"
+c=pd.read_csv(url)
 
 def read_image(index, file='test.csv'):
     """Read an example image from a test file
@@ -57,8 +63,8 @@ if __name__ == "__main__":
     image_pixels = read_image(index=1)
     plt.imshow(np.array(image_pixels).reshape(WIDTH, HEIGHT), cmap='gray')
 
+    # Cast values to float
     images = [np.float(i) for i in image_pixels.tolist()]
-
 
     # Get predictions
     predictions = get_predictions(
