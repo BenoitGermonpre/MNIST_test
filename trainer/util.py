@@ -28,7 +28,7 @@ def build_input_fn(filenames, batch_size=100, shuffle=False):
             dataset = dataset.shuffle(buffer_size=10000)
 
         # Infinite iterations: let training spec determine num_epochs
-        #dataset = dataset.repeat(None)
+        dataset = dataset.repeat(None)
 
         # Determine batch size and iterate
         dataset = dataset.batch(batch_size)
