@@ -1,8 +1,8 @@
 import tensorflow as tf
 from trainer.util import build_input_fn
 from trainer.model import build_model_fn
-#from trainer.config import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE, NUM_SHARDS
-from archive.config_local import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE, NUM_SHARDS
+from trainer.config import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE, NUM_SHARDS
+#from archive.config_local import MODEL_DIR, TFRECORD_DIR, BATCH_SIZE, NUM_SHARDS
 import os
 
 
