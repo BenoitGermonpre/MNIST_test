@@ -25,7 +25,7 @@ if __name__ == '__main__':
     test_input_fn = build_input_fn(filenames_test, batch_size=BATCH_SIZE)
 
     # Prepare spec for train and test data
-    train_spec = tf.estimator.TrainSpec(input_fn=train_input_fn, max_steps=1000)
+    train_spec = tf.estimator.TrainSpec(input_fn=train_input_fn, max_steps=10000)
     eval_spec = tf.estimator.EvalSpec(input_fn=test_input_fn, steps=500)
 
     # Train and evaluate estimator
